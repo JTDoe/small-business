@@ -1,21 +1,29 @@
-import React from 'react'
-import { Switch, Route } from 'react-router'
-import Home from './containers/Home'
-import About from './components/About'
-import Car from './containers/Car'
-import Dashboard from './containers/Dashboard'
+import React from "react";
+import { Router, Route } from "react-router-dom";
+import cookie from "cookie";
+import Login from "./components/Login";
+import Add from "./containers/AddListing";
+import Listings from "./containers/Listings";
+import ListingDetails from "./containers/ListingDetails";
 
-
-const Router = () => {
-    return (
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/car/:id" component={Car} />
-            <Route path="/dashboard" component={Dashboard} />
-          
-        </Switch>
-    );
+export const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  return cookies["loggedIn"] ? true : false;
 };
 
-export default Router;
+const ProtectedRoute = (props) => {
+  const { component: Component } = props;
+};
+
+const routes = () => {
+  return (
+    <Router>
+      <Route exact path="/" element={<Listings />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/AddListing" element={<ProtectedRoute component={Add} />} />
+      <Route path="/Listings/:id" element={<ListingDetails />} />
+    </Router>
+  );
+};
+
+export default routes;
