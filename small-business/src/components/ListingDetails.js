@@ -6,7 +6,7 @@ const ListingDetails = (props) => {
   const listings = props.listings.find((b) => b.id === id.id);
 
   return (
-    <div className="listings-container">
+    <div className="business-container">
       <div className="listing">
         <h1>{listings.Name}</h1>
         <h3>{listings.Description}</h3>

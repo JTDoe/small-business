@@ -22,7 +22,7 @@ const Listings = (props) => {
             <TableCell>Business</TableCell>
             <TableCell>Description</TableCell>
             <TableCell>Address</TableCell>
-            <TableCell>Operating Hours</TableCell>
+            <TableCell>Hours</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -62,7 +62,7 @@ const Add = (props) => {
           <input
             type="text"
             name="open"
-            placeholder="Operating hrs"
+            placeholder="Operating hours"
             onChange={handleChange}
           />
 

@@ -14,8 +14,8 @@ const Navigation = (props) => {
         <Typography variant="h6" style={{ flexGrow: "1" }}>
          Montgomery Restaraunts
         </Typography>
-        <ul className="nav-list">
-          <li className="nav-list-item">
+        <ul className="navigation-list">
+          <li className="navigation-list-item">
             <Link to="/">Listings</Link>
           </li>
           <li className="nav-list-item">
